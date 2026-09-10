@@ -9,11 +9,25 @@
 // You will need: filter, map, sort, slice, and Math.ceil.
 // Not sure what one of them does? Look it up (MDN) before asking.
 
+// (a)
 const scores = Array.from({ length: 20 }, () => Math.floor(Math.random() * 101));
 console.log("start:", scores);
 
-// (a)
+const oddScores = scores.filter(num => num%2 !== 0);
+console.log("odd:", oddScores);
+
+const doubleScores = oddScores.map(num => num * 2);
+console.log("double:", doubleScores);
+
+const descendingScores = doubleScores.sort((a,b) => b - a);
+console.log("descending:", descendingScores);
+
+const firstHalfScores = descendingScores.slice(0, Math.ceil(descendingScores.length/2));
+console.log("first half:", firstHalfScores);
 
 // (b)
+const result = scores.filter(num => num % 2 !== 0)
+.map(num => num * 2).sort((a,b) => b - a).slice(0, Math.ceil(oddScores.length / 2));
 
 // (c)
+console.log("Chain Method:", result);
