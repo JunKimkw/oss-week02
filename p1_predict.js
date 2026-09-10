@@ -21,3 +21,4 @@ console.log(13, typeof []);          // prediction: array 틀림 정답: object
 console.log(14, [1, 2] == [1, 2]);   // prediction: true 틀림 정답: false 이유: object가 가르키고 있는 참조자를 비교한다 a = [1,2] b = a 이러면 True가 나옴.
 console.log(15, NaN === NaN);        // prediction: true 틀림 정답: false 이유: NAN은 특이한 규칙이 있어서 자기 자신과도 다르다 비교할거면 isNaN사용
 // typeof는 number, string, boolean, undefined, object, function, symbol, bigint가 있다.
+ 
