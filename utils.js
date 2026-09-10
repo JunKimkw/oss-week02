@@ -14,11 +14,16 @@ export function tokenize(text) {
 // Same pattern as P4 (b), but you do not know the words in advance:
 // a word you have not seen yet has no key (=== undefined), so set it to 0 first.
 export function countWords(words) {
-  // TODO
+   const count = {};
+  words.forEach((w) => {
+    if (count[w] === undefined) count[w] = 0;
+    count[w] += 1;
+  });
+  return count;
 }
 
 // topN({ ship: 2, it: 1, code: 9 }, 2) -> [["code", 9], ["ship", 2]]
 // Object.entries(counts) gives [["ship", 2], ["it", 1], ["code", 9]]. Sort it, then cut it.
-export function topN(counts, n) {
-  // TODO
-}
+export function topN(count, n) {
+  return Object.entries(count).sort((a, b) => b[1] - a[1]).slice(0, n);
+  }
