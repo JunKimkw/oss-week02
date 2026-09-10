@@ -5,18 +5,19 @@
 // Wrong predictions are the point. For every miss, add one line
 // explaining why, and commit.
 
-console.log(1, 1 == "1");            // prediction:
-console.log(2, 1 === "1");           // prediction:
-console.log(3, 0 == "");             // prediction:
-console.log(4, 0 === "");            // prediction:
-console.log(5, "" == " ");           // prediction:
-console.log(6, null == undefined);   // prediction:
-console.log(7, null === undefined);  // prediction:
-console.log(8, "4" - true);          // prediction:
-console.log(9, "4" + 1);             // prediction:
-console.log(10, "4" * "2");          // prediction:
-console.log(11, typeof "4");         // prediction:
-console.log(12, typeof null);        // prediction:
-console.log(13, typeof []);          // prediction:
-console.log(14, [1, 2] == [1, 2]);   // prediction:
-console.log(15, NaN === NaN);        // prediction:
+console.log(1, 1 == "1");            // prediction: true
+console.log(2, 1 === "1");           // prediction: false
+console.log(3, 0 == "");             // prediction: true
+console.log(4, 0 === "");            // prediction: false
+console.log(5, "" == " ");           // prediction: true 틀림 정답: false
+console.log(6, null == undefined);   // prediction: true 
+console.log(7, null === undefined);  // prediction: false
+console.log(8, "4" - true);          // prediction: 3 
+console.log(9, "4" + 1);             // prediction: 41
+console.log(10, "4" * "2");          // prediction: 8
+console.log(11, typeof "4");         // prediction: string
+console.log(12, typeof null);        // prediction: null 틀림 정답: object 
+console.log(13, typeof []);          // prediction: array 틀림 정답: object
+console.log(14, [1, 2] == [1, 2]);   // prediction: true 틀림 정답: false 이유: object가 가르키고 있는 참조자를 비교한다 a = [1,2] b = a 이러면 True가 나옴.
+console.log(15, NaN === NaN);        // prediction: true 틀림 정답: false 이유: NAN은 특이한 규칙이 있어서 자기 자신과도 다르다 비교할거면 isNaN사용
+// typeof는 number, string, boolean, undefined, object, function, symbol, bigint가 있다.
