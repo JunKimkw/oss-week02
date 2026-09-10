@@ -2,10 +2,22 @@
   "name": "oss-week02",
   "version": "1.0.0",
   "description": "Week 2 hands-on: Node, JavaScript, npm",
+  "homepage": "https://github.com/JunKimkw/oss-week02#readme",
+  "bugs": {
+    "url": "https://github.com/JunKimkw/oss-week02/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JunKimkw/oss-week02.git"
+  },
+  "license": "MIT",
+  "author": "",
   "type": "module",
   "main": "main.js",
   "scripts": {
     "start": "node main.js"
   },
-  "license": "MIT"
+  "dependencies": {
+    "inko": "^1.1.1"
+  }
 }
